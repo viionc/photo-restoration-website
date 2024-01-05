@@ -11,7 +11,7 @@ const afterIamges = [after1, after2, after3];
 
 interface Slider {
     id: number;
-    sliderEvent: null | MouseEvent;
+    sliderEvent: null | MouseEvent | TouchEvent;
 }
 
 const clickedSlider = ref<Slider>({
@@ -25,31 +25,37 @@ const sliderPositions = ref<Record<number, number>>({
     3: 40,
 });
 
-const handleSlider = (e: MouseEvent) => {
+const handleSlider = (e: MouseEvent | TouchEvent) => {
     if (!clickedSlider.value.sliderEvent) return;
     const parent = (clickedSlider.value.sliderEvent.target as HTMLElement).parentElement; //yes
     if (!parent) return;
     const pos = parent.getBoundingClientRect();
-    if (e.clientX - pos.left > pos.width || e.clientX - pos.left <= 0) return;
-    sliderPositions.value[clickedSlider.value.id] = e.clientX - pos.left;
+    const x = (e as MouseEvent).clientX ? (e as MouseEvent).clientX : (e as TouchEvent).touches[0].clientX;
+    changePosition(x, pos);
 };
 
-const startDragging = (e: MouseEvent, id: number) => {
+const changePosition = (x: number, pos: DOMRect) => {
+    if (x - pos.left > pos.width || x - pos.left <= 0) return;
+    sliderPositions.value[clickedSlider.value.id] = x - pos.left;
+};
+
+const startDragging = (e: MouseEvent | TouchEvent, id: number) => {
     e.preventDefault();
     clickedSlider.value = {id, sliderEvent: e};
 };
-const stopDragging = (e: MouseEvent) => {
+const stopDragging = (e: MouseEvent | TouchEvent) => {
     e.preventDefault();
     clickedSlider.value = {id: 0, sliderEvent: null};
 };
 
 window.addEventListener("mousemove", handleSlider);
+window.addEventListener("touchmove", handleSlider);
 </script>
 
 <template>
     <section id="portfolio" class="container gap-8 flex flex-col items-center">
         <h2 class="text-2xl font-bold">Check examples of our work:</h2>
-        <div class="flex gap-8">
+        <div class="flex gap-8 flex-wrap justify-center">
             <article v-for="i = 1 in 3" class="relative h-[300px]">
                 <img draggable="false" :src="beforeImages[i - 1]" class="select-none h-full" :alt="`portfolio example #${i} before select-none`" />
                 <div
@@ -59,6 +65,8 @@ window.addEventListener("mousemove", handleSlider);
                 <div
                     v-on:mousedown="(e) => startDragging(e, i)"
                     v-on:mouseup="stopDragging"
+                    v-on:touchstart="(e) => startDragging(e, i)"
+                    v-on:touchend="stopDragging"
                     :style="{left: sliderPositions[i] + 'px'}"
                     class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></div>
             </article>
