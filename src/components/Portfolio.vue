@@ -40,15 +40,15 @@ const changePosition = (x: number, pos: DOMRect) => {
 };
 
 const startDragging = (e: MouseEvent | TouchEvent, id: number) => {
+    e.preventDefault();
     window.addEventListener("mousemove", handleSlider);
     window.addEventListener("touchmove", handleSlider);
-    e.preventDefault();
     clickedSlider.value = {id, sliderEvent: e};
 };
 const stopDragging = (e: MouseEvent | TouchEvent) => {
+    e.preventDefault();
     window.removeEventListener("mousemove", handleSlider);
     window.removeEventListener("touchmove", handleSlider);
-    e.preventDefault();
     clickedSlider.value = {id: 0, sliderEvent: null};
 };
 </script>
@@ -68,7 +68,7 @@ const stopDragging = (e: MouseEvent | TouchEvent) => {
                     v-on:mouseup="stopDragging"
                     v-on:touchstart="(e) => startDragging(e, i)"
                     v-on:touchend="stopDragging"
-                    :style="{left: sliderPositions[i] + 'px'}"
+                    :style="{left: `${sliderPositions[i]}px`, cursor: `${clickedSlider.id ? 'grabbing' : 'grab'}`}"
                     class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></div>
             </article>
         </div>
