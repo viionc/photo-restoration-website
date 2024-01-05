@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {ref} from "vue";
-const before1 = new URL("../assets/portfolio/before1.png", import.meta.url).href;
-const before2 = new URL("../assets/portfolio/before2.png", import.meta.url).href;
-const before3 = new URL("../assets/portfolio/before3.png", import.meta.url).href;
-const after1 = new URL("../assets/portfolio/after1.png", import.meta.url).href;
-const after2 = new URL("../assets/portfolio/after2.png", import.meta.url).href;
-const after3 = new URL("../assets/portfolio/after3.png", import.meta.url).href;
+const before1 = new URL("../assets/portfolio/before1.webp", import.meta.url).href;
+const before2 = new URL("../assets/portfolio/before2.webp", import.meta.url).href;
+const before3 = new URL("../assets/portfolio/before3.webp", import.meta.url).href;
+const after1 = new URL("../assets/portfolio/after1.webp", import.meta.url).href;
+const after2 = new URL("../assets/portfolio/after2.webp", import.meta.url).href;
+const after3 = new URL("../assets/portfolio/after3.webp", import.meta.url).href;
 const beforeImages = [before1, before2, before3];
 const afterIamges = [after1, after2, after3];
 
