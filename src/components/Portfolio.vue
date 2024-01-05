@@ -3,6 +3,17 @@ import {ref} from "vue";
 const before1 = new URL("../assets/portfolio/before1.png", import.meta.url).href;
 const before2 = new URL("../assets/portfolio/before2.png", import.meta.url).href;
 const before3 = new URL("../assets/portfolio/before3.png", import.meta.url).href;
+const images = [before1, before2, before3];
+
+interface Slider {
+    id: number;
+    sliderEvent: null | MouseEvent;
+}
+
+const sliderId = ref<Slider>({
+    id: 0,
+    sliderEvent: null,
+});
 
 const sliderPositions = ref<Record<number, number>>({
     1: 40,
@@ -10,58 +21,44 @@ const sliderPositions = ref<Record<number, number>>({
     3: 40,
 });
 
-const handleSlider = (e: DragEvent, id: number) => {
-    const parent = (e.target as HTMLElement).parentElement;
+const handleSlider = (e: MouseEvent) => {
+    if (!sliderId.value.sliderEvent) return;
+    const parent = (sliderId.value.sliderEvent.target as HTMLElement).parentElement;
     if (!parent) return;
     const pos = parent.getBoundingClientRect();
     if (e.clientX - pos.left > pos.width || e.clientX - pos.left <= 0) return;
-    sliderPositions.value[id] = e.clientX - pos.left;
-    console.log(pos);
+    sliderPositions.value[sliderId.value.id] = e.clientX - pos.left;
 };
+
+const startDragging = (e: MouseEvent, id: number) => {
+    e.preventDefault();
+    sliderId.value = {id, sliderEvent: e};
+};
+const stopDragging = (e: MouseEvent) => {
+    e.preventDefault();
+    sliderId.value = {id: 0, sliderEvent: null};
+};
+
+window.addEventListener("mousemove", handleSlider);
 </script>
 
 <template>
     <section id="portfolio" class="container gap-8 flex flex-col items-center">
         <h2 class="text-2xl font-bold">Check examples of our work:</h2>
         <div class="flex gap-8">
-            <article class="relative h-[300px]">
-                <img draggable="false" :src="before1" class="pointer-events-none select-none h-full" alt="portfolio example #1 before select-none" />
-                <span
-                    draggable="false"
-                    :style="{width: sliderPositions[1] + 'px'}"
-                    class="pointer-events-none select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-[url('./assets/portfolio/after1.png')] bg-cover"></span>
-                <span
-                    draggable
-                    v-on:drag="(e) => handleSlider(e, 1)"
-                    :style="{left: sliderPositions[1] + 'px'}"
-                    class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></span>
-            </article>
-            <article class="relative h-[300px]">
-                <img draggable="false" :src="before2" class="select-none h-full" alt="portfolio example #1 before select-none" />
-                <span
-                    draggable="false"
-                    :style="{width: sliderPositions[2] + 'px'}"
-                    class="select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-[url('./assets/portfolio/after2.png')]"></span>
-                <span
-                    draggable
-                    v-on:click="(e) => e.preventDefault()"
-                    v-on:drag="(e) => handleSlider(e, 2)"
-                    :style="{left: sliderPositions[2] + 'px'}"
-                    class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></span>
-            </article>
-
-            <article class="relative h-[300px]">
-                <img draggable="false" :src="before3" class="select-none h-full" alt="portfolio example #3 before select-none" />
-                <span
-                    draggable="false"
-                    :style="{width: sliderPositions[3] + 'px'}"
-                    class="select-none z-10 h-full absolute top-0 left-0 bg-[url('./assets/portfolio/after3.png')] bg-cover"></span>
-                <span
-                    draggable
-                    v-on:click="(e) => e.preventDefault()"
-                    v-on:drag="(e) => handleSlider(e, 3)"
-                    :style="{left: sliderPositions[3] + 'px'}"
-                    class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></span>
+            <article v-for="i = 1 in 3" class="relative h-[300px]">
+                <img draggable="false" :src="images[i - 1]" class="select-none h-full" :alt="`portfolio example #${i} before select-none`" />
+                <div @dragover.prevent @dragenter.prevent>
+                    <div
+                        draggable="false"
+                        :style="{width: sliderPositions[i] + 'px'}"
+                        :class="`select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-[url('./assets/portfolio/after${i}.png')] bg-cover`"></div>
+                </div>
+                <div
+                    v-on:mousedown="(e) => startDragging(e, i)"
+                    v-on:mouseup="stopDragging"
+                    :style="{left: sliderPositions[i] + 'px'}"
+                    class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></div>
             </article>
         </div>
     </section>
