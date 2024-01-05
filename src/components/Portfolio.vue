@@ -18,10 +18,6 @@ const handleSlider = (e: DragEvent, id: number) => {
     sliderPositions.value[id] = e.clientX - pos.left;
     console.log(pos);
 };
-
-const dragStart = (e: DragEvent, id: number) => {
-    window.addEventListener("", () => handleSlider(e, id));
-};
 </script>
 
 <template>
@@ -36,7 +32,7 @@ const dragStart = (e: DragEvent, id: number) => {
                     class="pointer-events-none select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-[url('./assets/portfolio/after1.png')] bg-cover"></span>
                 <span
                     draggable
-                    v-on:dragstart="(e) => dragStart(e, 1)"
+                    v-on:drag="(e) => handleSlider(e, 1)"
                     :style="{left: sliderPositions[1] + 'px'}"
                     class="z-50 absolute top-[-6px] bottom-[-6px] rounded-lg w-3 bg-orange-500 cursor-grab"></span>
             </article>
