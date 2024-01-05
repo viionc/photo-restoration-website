@@ -5,6 +5,7 @@ import Landing from "./components/Landing.vue";
 import Portfolio from "./components/Portfolio.vue";
 import Pricing from "./components/Pricing.vue";
 import Footer from "./components/Footer.vue";
+import Contact from "./components/Contact.vue";
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import Footer from "./components/Footer.vue";
         <Portfolio />
         <Pricing />
         <AboutUs />
+        <Contact />
         <Footer />
     </main>
 </template>
