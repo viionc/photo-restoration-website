@@ -35,21 +35,22 @@ const handleSlider = (e: MouseEvent | TouchEvent) => {
 };
 
 const changePosition = (x: number, pos: DOMRect) => {
-    if (x - pos.left > pos.width || x - pos.left <= 0) return;
+    if (x - pos.left > pos.width - 12 || x - pos.left <= 0) return;
     sliderPositions.value[clickedSlider.value.id] = x - pos.left;
 };
 
 const startDragging = (e: MouseEvent | TouchEvent, id: number) => {
+    window.addEventListener("mousemove", handleSlider);
+    window.addEventListener("touchmove", handleSlider);
     e.preventDefault();
     clickedSlider.value = {id, sliderEvent: e};
 };
 const stopDragging = (e: MouseEvent | TouchEvent) => {
+    window.removeEventListener("mousemove", handleSlider);
+    window.removeEventListener("touchmove", handleSlider);
     e.preventDefault();
     clickedSlider.value = {id: 0, sliderEvent: null};
 };
-
-window.addEventListener("mousemove", handleSlider);
-window.addEventListener("touchmove", handleSlider);
 </script>
 
 <template>

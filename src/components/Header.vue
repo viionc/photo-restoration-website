@@ -3,21 +3,17 @@
         <nav class="container flex gap-12 h-20 items-center">
             <p class="text-2xl">Logo</p>
             <ul class="ms-auto flex text-2xl h-full">
-                <li
-                    class="h-full px-6 flex items-center justify-center cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
-                    <a href="#home">Home</a>
+                <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
+                    <a href="#home" class="h-full w-full flex items-center justify-center">Home</a>
                 </li>
-                <li
-                    class="h-full px-6 flex items-center justify-center cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
-                    <a href="#portfolio">Portfolio</a>
+                <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
+                    <a href="#portfolio" class="h-full w-full flex items-center justify-center">Portfolio</a>
                 </li>
-                <li
-                    class="h-full px-6 flex items-center justify-center cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
-                    <a href="#about">About us</a>
+                <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
+                    <a href="#about" class="h-full w-full flex items-center justify-center">About us</a>
                 </li>
-                <li
-                    class="h-full px-6 flex items-center justify-center cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
-                    <a href="#pricing">Pricing</a>
+                <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all">
+                    <a href="#pricing" class="h-full w-full flex items-center justify-center">Pricing</a>
                 </li>
             </ul>
             <button

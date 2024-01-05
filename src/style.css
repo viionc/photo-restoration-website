@@ -12,4 +12,12 @@
 html,
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+#about,
+#pricing,
+#portfolio,
+#contact {
+    padding-top: 80px;
+    margin-top: -80px;
 }
