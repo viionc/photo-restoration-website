@@ -10,7 +10,7 @@ interface Slider {
     sliderEvent: null | MouseEvent;
 }
 
-const sliderId = ref<Slider>({
+const clickedSlider = ref<Slider>({
     id: 0,
     sliderEvent: null,
 });
@@ -22,21 +22,21 @@ const sliderPositions = ref<Record<number, number>>({
 });
 
 const handleSlider = (e: MouseEvent) => {
-    if (!sliderId.value.sliderEvent) return;
-    const parent = (sliderId.value.sliderEvent.target as HTMLElement).parentElement;
+    if (!clickedSlider.value.sliderEvent) return;
+    const parent = (clickedSlider.value.sliderEvent.target as HTMLElement).parentElement; //yes
     if (!parent) return;
     const pos = parent.getBoundingClientRect();
     if (e.clientX - pos.left > pos.width || e.clientX - pos.left <= 0) return;
-    sliderPositions.value[sliderId.value.id] = e.clientX - pos.left;
+    sliderPositions.value[clickedSlider.value.id] = e.clientX - pos.left;
 };
 
 const startDragging = (e: MouseEvent, id: number) => {
     e.preventDefault();
-    sliderId.value = {id, sliderEvent: e};
+    clickedSlider.value = {id, sliderEvent: e};
 };
 const stopDragging = (e: MouseEvent) => {
     e.preventDefault();
-    sliderId.value = {id: 0, sliderEvent: null};
+    clickedSlider.value = {id: 0, sliderEvent: null};
 };
 
 window.addEventListener("mousemove", handleSlider);

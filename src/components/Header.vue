@@ -1,7 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-    <header class="w-full flex justify-center">
+    <header class="z-[100] w-full flex justify-center top-0 left-0 bg-white fixed border-b border-black shadow-md bg-opacity-90">
         <nav class="container flex gap-12 h-20 items-center">
             <p class="text-2xl">Logo</p>
             <ul class="ms-auto flex text-2xl h-full">
