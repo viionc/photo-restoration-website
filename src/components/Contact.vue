@@ -27,7 +27,7 @@ const closeDialog = () => {
             </div>
             <div class="flex flex-col gap-2 w-2/3 md:w-1/2">
                 <!-- <label for="email" class="text-xl font-semibold">E-mail:</label> -->
-                <input id="email" type="email" class="h-10 rounded-md px-2 border border-orange-500" placeholder="E-mail" />
+                <input id="email" type="email" class="h-10 rounded-md px-2 border border-orange-500" placeholder="E-mail" required />
             </div>
             <div class="flex flex-col gap-2 w-2/3 md:w-1/2">
                 <!-- <label for="subject" class="text-xl font-semibold">Subject:</label> -->
@@ -35,7 +35,7 @@ const closeDialog = () => {
             </div>
             <div class="flex flex-col gap-2 w-2/3 md:w-1/2">
                 <!-- <label for="message" class="text-xl font-semibold">Message:</label> -->
-                <textarea id="message" rows="10" class="p-2 rounded-md border border-orange-500" placeholder="Your message"></textarea>
+                <textarea id="message" rows="10" class="p-2 rounded-md border border-orange-500" placeholder="Your message" required></textarea>
             </div>
             <button
                 class="text-lg text-white w-1/4 rounded-md border-2 border-orange-600 bg-orange-600 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">

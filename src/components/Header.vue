@@ -1,5 +1,5 @@
 <template>
-    <header class="z-[100] w-full flex justify-center top-0 left-0 bg-white fixed border-b border-black shadow-md bg-opacity-90">
+    <header class="z-[100] w-full flex justify-center top-0 left-0 bg-white fixed border-b border-orange-500 shadow-lg bg-opacity-90">
         <nav class="container flex gap-12 h-20 items-center">
             <p class="text-2xl">Logo</p>
             <ul class="ms-auto flex text-2xl h-full">
@@ -18,7 +18,7 @@
             </ul>
             <button
                 class="text-lg text-white border rounded-md bg-orange-600 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
-                Contact us!
+                <a href="#contact">Contact us!</a>
             </button>
         </nav>
     </header>
