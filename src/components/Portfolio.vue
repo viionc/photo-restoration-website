@@ -20,9 +20,9 @@ const clickedSlider = ref<Slider>({
 });
 
 const sliderPositions = ref<Record<number, number>>({
-    1: 40,
-    2: 40,
-    3: 40,
+    1: 95,
+    2: 220,
+    3: 110,
 });
 
 const handleSlider = (e: MouseEvent | TouchEvent) => {

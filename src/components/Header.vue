@@ -17,7 +17,7 @@
                 </li>
             </ul>
             <button
-                class="text-lg text-white border rounded-md bg-orange-600 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
+                class="text-lg text-white border rounded-md bg-orange-500 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
                 <a href="#contact">Contact us!</a>
             </button>
         </nav>

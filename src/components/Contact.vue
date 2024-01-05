@@ -38,7 +38,7 @@ const closeDialog = () => {
                 <textarea id="message" rows="10" class="p-2 rounded-md border border-orange-500" placeholder="Your message" required></textarea>
             </div>
             <button
-                class="text-lg text-white w-1/4 rounded-md border-2 border-orange-600 bg-orange-600 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
+                class="text-lg text-white w-1/4 rounded-md border-2 border-orange-500 bg-orange-500 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
                 Send
             </button>
         </form>
@@ -47,7 +47,7 @@ const closeDialog = () => {
                 <h4 class="mb-4 text-2xl font-semibold">Thank you!</h4>
                 <button
                     v-on:click="closeDialog"
-                    class="text-lg text-white w-1/4 rounded-md border-2 border-orange-600 bg-orange-600 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
+                    class="text-lg text-white w-1/4 rounded-md border-2 border-orange-500 bg-orange-500 font-bold p-2 hover:bg-orange-500 hover:scale-105 focus:border-2 focus:border-orange-600 active:bg-opacity-80">
                     Close
                 </button>
             </div>

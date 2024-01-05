@@ -6,6 +6,7 @@ import Portfolio from "./components/Portfolio.vue";
 import Pricing from "./components/Pricing.vue";
 import Footer from "./components/Footer.vue";
 import Contact from "./components/Contact.vue";
+import Carousel from "./components/Carousel.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import Contact from "./components/Contact.vue";
     <main class="w-full flex flex-col items-center justify-center gap-52">
         <Landing />
         <Portfolio />
+        <Carousel />
         <AboutUs />
         <Pricing />
         <Contact />
