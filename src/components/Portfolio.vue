@@ -3,7 +3,11 @@ import {ref} from "vue";
 const before1 = new URL("../assets/portfolio/before1.png", import.meta.url).href;
 const before2 = new URL("../assets/portfolio/before2.png", import.meta.url).href;
 const before3 = new URL("../assets/portfolio/before3.png", import.meta.url).href;
-const images = [before1, before2, before3];
+const after1 = new URL("../assets/portfolio/after1.png", import.meta.url).href;
+const after2 = new URL("../assets/portfolio/after2.png", import.meta.url).href;
+const after3 = new URL("../assets/portfolio/after3.png", import.meta.url).href;
+const beforeImages = [before1, before2, before3];
+const afterIamges = [after1, after2, after3];
 
 interface Slider {
     id: number;
@@ -47,13 +51,11 @@ window.addEventListener("mousemove", handleSlider);
         <h2 class="text-2xl font-bold">Check examples of our work:</h2>
         <div class="flex gap-8">
             <article v-for="i = 1 in 3" class="relative h-[300px]">
-                <img draggable="false" :src="images[i - 1]" class="select-none h-full" :alt="`portfolio example #${i} before select-none`" />
-                <div @dragover.prevent @dragenter.prevent>
-                    <div
-                        draggable="false"
-                        :style="{width: sliderPositions[i] + 'px'}"
-                        :class="`select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-[url('./assets/portfolio/after${i}.png')] bg-cover`"></div>
-                </div>
+                <img draggable="false" :src="beforeImages[i - 1]" class="select-none h-full" :alt="`portfolio example #${i} before select-none`" />
+                <div
+                    draggable="false"
+                    :style="{width: sliderPositions[i] + 'px', backgroundImage: `url(${afterIamges[i - 1]})`}"
+                    :class="`select-none z-10 absolute top-0 left-0 bottom-0 h-full bg-cover`"></div>
                 <div
                     v-on:mousedown="(e) => startDragging(e, i)"
                     v-on:mouseup="stopDragging"

@@ -1,5 +1,5 @@
 <template>
-    <seciton id="about" class="container flex justify-center flex-col items-center gap-20">
+    <section id="about" class="container flex justify-center flex-col items-center gap-20">
         <article class="flex flex-col justify-center w-2/3 items-center gap-6">
             <h3 class="text-2xl font-semibold">About Our Photo Restoration Studio</h3>
             <p class="text-xl w-3/4 leading-9">
@@ -58,5 +58,5 @@
                 </div>
             </div>
         </article>
-    </seciton>
+    </section>
 </template>
