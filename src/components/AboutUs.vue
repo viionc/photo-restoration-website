@@ -8,7 +8,7 @@
                 come.
             </p>
         </article>
-        <article class="flex flex-col justify-center w-[90%] md:w-2/3items-center">
+        <article class="flex flex-col justify-center w-[90%] md:w-2/3 items-center">
             <h3 class="text-2xl font-semibold mb-8">Our Passion</h3>
             <p class="text-xl w-full md:w-3/4 leading-9">
                 At the heart of our photo restoration studio is a team of passionate professionals with a shared love for photography and a commitment
