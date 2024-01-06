@@ -1,3 +1,22 @@
+# Photo Restoration Studio
+Demo: https://photo-restoration-website.vercel.app/
+
+A static website for practice made with Vue, TypeScript and TailwindCSS.
+
+Features:
+- Landing page with 2 different backgrounds depending on screen width (smaller background on mobile to reduce FCP),
+- Section with images with "sliders" that allow to show before and after stages of the photo,
+- Carousel with images changing on an interval,
+- Lazy loading images,
+- Intersection transitions,
+- Small, elegant animations on hover,
+- Responsive web design,
+
+
+
+
+<br><br><br><br><br>
+
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
