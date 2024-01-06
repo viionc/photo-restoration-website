@@ -25,7 +25,7 @@ const handleNavbar = () => {
                 v-on:click="handleNavbar" />
             <ul
                 :class="`ms-0 md:ms-auto text-4xl md:text-2xl flex h-full absolute  z-[1000] flex-col justify-center items-center transition-all duration-300 ease-in-out
-                 md:static md:flex-row ${open ? 'left-0 right-0 top-0 h-[100dvh] bg-white' : 'left-[-600px] '}
+                 md:static md:flex-row ${open ? 'left-0 right-0 top-0 h-[100vh] bg-white' : 'left-[-600px] '}
 
             `">
                 <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all w-full md:w-auto">
