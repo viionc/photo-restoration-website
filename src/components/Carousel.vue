@@ -44,27 +44,31 @@ setInterval(() => {
                     <div class="absolute top-1/2 -translate-y-1/2 left-2 lg:left-8 xl:left-32 w-12 h-1/3 lg:h-full flex items-center justify-center">
                         <img
                             :src="arrowLeft"
-                            class="p-2 bg-orange-300 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-400 h-1/2 bg-opacity-75 shadow-lg"
+                            class="p-2 bg-orange-300 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-400 h-1/2 bg-opacity-75 shadow-sm shadow-cyan-900"
                             v-on:click="backwards" />
                     </div>
                     <img
                         v-for="i in images.length"
                         loading="lazy"
                         :src="images[i - 1]"
-                        :class="`h-full w-full object-contain  ${currentImageIndex === i ? 'block' : 'hidden'}`"
+                        :class="`h-full w-full object-contain   ${currentImageIndex === i ? 'block' : 'hidden'}`"
                         alt="carousel image" />
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3">
                         <span
                             v-for="i in images.length"
                             v-on:click="() => handleDotClick(i)"
                             :class="`rounded-full shadow-xl 
-                            ${currentImageIndex === i ? 'bg-orange-500 h-8 w-8' : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer  '}`"></span>
+                            ${
+                                currentImageIndex === i
+                                    ? 'bg-orange-500 h-8 w-8'
+                                    : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer shadow-sm shadow-cyan-900 '
+                            }`"></span>
                     </div>
                     <div
                         class="absolute top-1/2 -translate-y-1/2 right-2 lg:right-8 xl:right-32 w-12 h-1/3 lg:h-full flex items-center justify-center">
                         <img
                             :src="arrowRight"
-                            class="p-2 bg-orange-300 rounded-md cursor-pointer hover:scale-105 h-1/2 hover:bg-orange-400 bg-opacity-75 shadow-lg"
+                            class="p-2 bg-orange-300 rounded-md cursor-pointer hover:scale-105 h-1/2 hover:bg-orange-400 bg-opacity-75 shadow-sm shadow-cyan-900"
                             v-on:click="forwards" />
                     </div>
                 </div>

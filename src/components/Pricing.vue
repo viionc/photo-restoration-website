@@ -16,12 +16,12 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
         :class="`bg-orange-100 w-full items-center justify-center flex flex-col transition-all duration-700 ${
             isVisable ? 'opacity-100' : 'opacity-10'
         }`">
-        <h2 class="text-2xl font-semibold mb-12">Our pricings:</h2>
+        <h2 class="text-2xl font-semibold mb-12 text-cyan-800">Our pricings:</h2>
         <div class="container flex gap-10 flex-wrap justify-center">
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-xl
-            after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105 transition-all duration-500
+            after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1] 
+            transition-all duration-500 md:delay-1000 ${isVisable ? 'translate-x-0' : '-translate-x-20'}
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Basic</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
@@ -48,7 +48,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
                 </ul>
                 <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
-                        <p class="text-6xl font-semibold">50$</p>
+                        <p class="text-6xl font-semibold text-cyan-900">50$</p>
                         <p class="text-md font-semibold">/photo</p>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
             after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105 transition-all duration-500
+            transition-all duration-500 md:delay-[500ms] ${isVisable ? 'translate-x-0' : '-translate-x-20'}
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Advanced</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
@@ -83,7 +83,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
                 </ul>
                 <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
-                        <p class="text-6xl font-semibold">150$</p>
+                        <p class="text-6xl font-semibold text-cyan-900">150$</p>
                         <p class="text-md font-semibold">/photo</p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
             after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105 transition-all duration-500
+            transition-all duration-500  ${isVisable ? 'translate-x-0' : '-translate-x-20'}
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Pro</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
@@ -118,7 +118,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
                 </ul>
                 <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
-                        <p class="text-6xl font-semibold">250$</p>
+                        <p class="text-6xl font-semibold text-cyan-900">250$</p>
                         <p class="text-md font-semibold">/photo</p>
                     </div>
                 </div>

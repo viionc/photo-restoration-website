@@ -55,10 +55,14 @@ const stopDragging = (e: MouseEvent | TouchEvent) => {
 
 <template>
     <section id="portfolio" class="container gap-8 flex flex-col items-center">
-        <h2 class="text-2xl font-bold">Check examples of our work:</h2>
+        <h2 class="text-2xl font-bold text-cyan-800">Check examples of our work:</h2>
         <div class="flex gap-8 flex-wrap justify-center">
             <article v-for="i = 1 in 3" class="relative h-[300px] max-w-[90%]">
-                <img draggable="false" :src="beforeImages[i - 1]" class="select-none h-full" :alt="`portfolio example #${i} before select-none`" />
+                <img
+                    draggable="false"
+                    :src="beforeImages[i - 1]"
+                    class="select-none h-full shadow-md shadow-orange-200"
+                    :alt="`portfolio example #${i} before select-none`" />
                 <div
                     draggable="false"
                     :style="{width: sliderPositions[i] + 'px', backgroundImage: `url(${afterIamges[i - 1]})`}"

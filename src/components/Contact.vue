@@ -17,7 +17,7 @@ const closeDialog = () => {
 
 <template>
     <section id="contact" class="container flex flex-col items-center justify-center relative">
-        <h3 class="text-4xl font-semibold mb-24">Send us a message!</h3>
+        <h3 class="text-4xl font-semibold mb-24 text-cyan-800">Send us a message!</h3>
         <form
             v-on:submit="handleSubmit"
             class="relative py-24 w-[90%] md:w-2/3 lg:w-1/2 flex flex-col gap-4 justify-center items-center bg-orange-200 after:contant-[' '] after:bg-orange-300 after:absolute after:top-[20px] after:bottom-[-20px] after:left-[20px] after:right-[-20px] after:z-[-1]">
