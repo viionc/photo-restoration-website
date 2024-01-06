@@ -8,6 +8,7 @@
                 <p class="text-xl">
                     Rediscover Your Memories in Every Pixel: Where Timeless Photos Find a New Breath of Life – Welcome to Our Photo Restoration Haven!
                 </p>
+                <a href="#about"><p class="text-orange-500 font-semibold text-lg hover:ms-4 transition-all duration-500">Learn more about us.</p></a>
             </div>
         </div>
     </section>

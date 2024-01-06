@@ -5,7 +5,7 @@
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-xl
             after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105
+            hover:scale-105 transition-all duration-500
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Basic</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
@@ -40,7 +40,7 @@
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
             after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105
+            hover:scale-105 transition-all duration-500
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Advanced</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
@@ -75,7 +75,7 @@
             <article
                 :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
             after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
-            hover:scale-105
+            hover:scale-105 transition-all duration-500
             `">
                 <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Pro</h3>
                 <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">

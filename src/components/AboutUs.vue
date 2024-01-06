@@ -28,29 +28,29 @@
             class="py-24 relative flex flex-col items-center w-[90%] md:w-2/3 after:content=[' '] after:absolute after:top-0 after:left-[-2000px] after:right-[-2000px] after:bottom-0 after:bg-orange-100 after:bg-opacity-75">
             <h3 class="z-10 text-2xl font-semibold mb-24">Why Choose Us?</h3>
             <div class="z-10 flex flex-wrap justify-center gap-8">
-                <div class="flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
-                    <h4 class="text-2xl font-semibold">Quality Assurance</h4>
+                <div class="group flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
+                    <h4 class="group-hover:ms-4 transition-all duration-500 text-2xl font-semibold">Quality Assurance</h4>
                     <p class="leading-8 text-lg">
                         We are dedicated to delivering the highest quality photo restoration services. Your satisfaction is our priority, and we
                         ensure that every restored image meets our stringent standards.
                     </p>
                 </div>
-                <div class="flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
-                    <h4 class="text-2xl font-semibold">Preserving History</h4>
+                <div class="group flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
+                    <h4 class="group-hover:ms-4 transition-all duration-500 text-2xl font-semibold">Preserving History</h4>
                     <p class="leading-8 text-lg">
                         We understand the historical and emotional significance of your photographs. Our team is committed to preserving not just
                         images but the stories and memories they hold.
                     </p>
                 </div>
-                <div class="flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
-                    <h4 class="text-2xl font-semibold">Easy Online Process</h4>
+                <div class="group flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
+                    <h4 class="group-hover:ms-4 transition-all duration-500 text-2xl font-semibold">Easy Online Process</h4>
                     <p class="leading-8 text-lg">
                         Our user-friendly online platform makes it convenient for you to upload your photos and receive beautifully restored images
                         from the comfort of your home.
                     </p>
                 </div>
-                <div class="flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
-                    <h4 class="text-2xl font-semibold">Customized Solutions</h4>
+                <div class="group flex flex-col items-center md:items-start w-[90%] md:w-[400px] gap-3">
+                    <h4 class="group-hover:ms-4 transition-all duration-500 text-2xl font-semibold">Customized Solutions</h4>
                     <p class="leading-8 text-lg">
                         Every photo is unique, and so are our restoration solutions. We offer personalized services tailored to the specific needs of
                         each image.
