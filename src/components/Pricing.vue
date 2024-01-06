@@ -2,9 +2,12 @@
     <section id="pricing" class="bg-orange-100 w-full items-center justify-center flex flex-col">
         <h2 class="text-2xl font-semibold mb-12">Our pricings:</h2>
         <div class="container flex gap-10 flex-wrap justify-center">
-            <article class="w-[300px] border h-[400px] border-orange-500 bg-orange-200 rounded-md flex items-center flex-col shadow-2xl">
-                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center rounded-t-md">Basic</h3>
-                <ul class="w-full flex flex-col gap-2 pt-2">
+            <article
+                :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-xl
+            after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
+            `">
+                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Basic</h3>
+                <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
                     <li class="w-full flex px-4 py-1 justify-between border-b border-orange-400">
                         <span class="font-semibold">Color:</span>
                         <span>No</span>
@@ -26,16 +29,19 @@
                         <span>Up to 14 days</span>
                     </li>
                 </ul>
-                <div class="flex items-center justify-center h-full bg-orange-300 w-full rounded-b-md">
+                <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
                         <p class="text-6xl font-semibold">50$</p>
                         <p class="text-md font-semibold">/photo</p>
                     </div>
                 </div>
             </article>
-            <article class="w-[300px] border h-[400px] border-orange-500 bg-orange-200 rounded-md flex items-center flex-col shadow-2xl">
-                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center rounded-t-md">Advanced</h3>
-                <ul class="w-full flex flex-col gap-2 pt-2">
+            <article
+                :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
+            after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
+            `">
+                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Advanced</h3>
+                <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
                     <li class="w-full flex px-4 py-1 justify-between border-b border-orange-400">
                         <span class="font-semibold">Color:</span>
                         <span>No</span>
@@ -57,16 +63,19 @@
                         <span>Up to 7 days</span>
                     </li>
                 </ul>
-                <div class="flex items-center justify-center h-full bg-orange-300 w-full rounded-b-md">
+                <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
                         <p class="text-6xl font-semibold">150$</p>
                         <p class="text-md font-semibold">/photo</p>
                     </div>
                 </div>
             </article>
-            <article class="w-[300px] border h-[400px] border-orange-500 bg-orange-200 rounded-md flex items-center flex-col shadow-2xl">
-                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center rounded-t-md">Pro</h3>
-                <ul class="w-full flex flex-col gap-2 pt-2">
+            <article
+                :class="`relative z-10 w-[300px] border h-[400px]  bg-orange-200 flex items-center flex-col shadow-2xl
+            after:content-[' '] after:bg-orange-400 after:absolute after:top-[12px] after:bottom-[-12px] after:left-[12px] after:right-[-12px] after:z-[-1]
+            `">
+                <h3 class="text-xl font-semibold p-3 bg-orange-300 w-full text-center">Pro</h3>
+                <ul class="w-full flex flex-col gap-2 pt-2 bg-orange-200">
                     <li class="w-full flex px-4 py-1 justify-between border-b border-orange-400">
                         <span class="font-semibold">Color:</span>
                         <span>Yes</span>
@@ -88,7 +97,7 @@
                         <span>Up to 3 days</span>
                     </li>
                 </ul>
-                <div class="flex items-center justify-center h-full bg-orange-300 w-full rounded-b-md">
+                <div class="flex items-center justify-center h-full bg-orange-300 w-full">
                     <div class="flex items-end">
                         <p class="text-6xl font-semibold">250$</p>
                         <p class="text-md font-semibold">/photo</p>

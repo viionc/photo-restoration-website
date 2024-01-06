@@ -7,6 +7,7 @@ import Pricing from "./components/Pricing.vue";
 import Footer from "./components/Footer.vue";
 import Contact from "./components/Contact.vue";
 import Carousel from "./components/Carousel.vue";
+import Reviews from "./components/Reviews.vue";
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import Carousel from "./components/Carousel.vue";
         <Carousel />
         <AboutUs />
         <Pricing />
+        <Reviews />
         <Contact />
         <Footer />
     </main>

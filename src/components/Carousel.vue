@@ -37,12 +37,20 @@ setInterval(() => {
                         class="p-2 bg-orange-100 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-200"
                         v-on:click="backwards" />
                 </div>
-                <div class="w-1/2 flex justify-center">
+                <div class="w-1/2 flex justify-center relative">
                     <img
                         v-for="i in images.length"
                         loading="lazy"
                         :src="images[i - 1]"
-                        :class="`h-full w-full object-cover ${currentImageIndex === i ? 'block' : 'hidden'}`" />
+                        :class="`h-full w-full object-cover ${currentImageIndex === i ? 'block' : 'hidden'}`"
+                        alt="carousel image" />
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3">
+                        <span
+                            v-for="i in images.length"
+                            v-on:click="() => handleDotClick(i)"
+                            :class="`rounded-full 
+                            ${currentImageIndex === i ? 'bg-orange-500 h-8 w-8' : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer  '}`"></span>
+                    </div>
                 </div>
                 <div class="w-12 h-full flex items-center justify-center">
                     <img
@@ -51,13 +59,6 @@ setInterval(() => {
                         v-on:click="forwards" />
                 </div>
             </article>
-            <div class="flex justify-center items-center gap-3">
-                <span
-                    v-for="i in images.length"
-                    v-on:click="() => handleDotClick(i)"
-                    :class="`rounded-full 
-                ${currentImageIndex === i ? 'bg-orange-500 h-8 w-8' : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer  '}`"></span>
-            </div>
         </div>
     </section>
 </template>
