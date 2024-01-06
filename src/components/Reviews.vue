@@ -1,14 +1,25 @@
 <script setup lang="ts">
+import {ref} from "vue";
+import {useIntersectionObserver} from "@vueuse/core";
 const person1 = new URL("../assets/reviews/person1.webp", import.meta.url).href;
 const person2 = new URL("../assets/reviews/person2.webp", import.meta.url).href;
 const person3 = new URL("../assets/reviews/person3.webp", import.meta.url).href;
+
+const intersectionTarget = ref(null);
+const isVisable = ref(false);
+
+useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
+    isVisable.value = isIntersecting;
+});
 </script>
 
 <template>
-    <section class="container flex flex-col items-center">
+    <section
+        ref="intersectionTarget"
+        :class="`container flex flex-col items-center transition-all duration-700  ${isVisable ? 'opacity-100' : 'opacity-10'}`">
         <h3 class="text-2xl mb-12 font-semibold">Recent Reviews:</h3>
         <div class="flex justify-center items-center flex-wrap gap-12">
-            <article class="group w-[300px] hover:scale-105 transition-all duration-500">
+            <article :class="`group w-[300px] hover:scale-105 transition-all duration-500 `">
                 <img :src="person1" alt="review #1" class="h-20 w-20 rounded-lg float-left me-2 mb-2" loading="lazy" />
                 <h4 class="text-xl font-semibold mb-4 group-hover:ms-32 duration-500 transition-all">Grace W.</h4>
                 <p class="text-justify">

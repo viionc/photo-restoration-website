@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import {ref} from "vue";
-
+import {useIntersectionObserver} from "@vueuse/core";
 const img1 = new URL("../assets/carousel/1.webp", import.meta.url).href;
 const img2 = new URL("../assets/carousel/2.webp", import.meta.url).href;
 const img3 = new URL("../assets/carousel/3.webp", import.meta.url).href;
 const img4 = new URL("../assets/carousel/4.webp", import.meta.url).href;
 const arrowLeft = new URL("../assets/icons/arrowLeft.svg", import.meta.url).href;
 const arrowRight = new URL("../assets/icons/arrowRight.svg", import.meta.url).href;
+
 const images = [img1, img2, img3, img4];
 const currentImageIndex = ref(1);
+const intersectionTarget = ref(null);
+const isVisable = ref(false);
+
+useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
+    isVisable.value = isIntersecting;
+});
 
 const forwards = () => {
     currentImageIndex.value = currentImageIndex.value + 1 > images.length ? 1 : currentImageIndex.value + 1;
@@ -28,7 +35,9 @@ setInterval(() => {
 </script>
 
 <template>
-    <section class="w-full flex justify-center bg-orange-100 py-12">
+    <section
+        ref="intersectionTarget"
+        :class="`w-full flex justify-center bg-orange-100 py-12 transition-all duration-700 ${isVisable ? 'opacity-100' : 'opacity-10'}`">
         <div class="container flex flex-col gap-8 justify-center items-center">
             <article class="flex w-full justify-center h-[400px] gap-4">
                 <div class="w-[98%] md:w-3/4 lg:1/2 flex justify-center relative">

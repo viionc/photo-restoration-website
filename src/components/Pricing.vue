@@ -1,5 +1,21 @@
+<script setup lang="ts">
+import {useIntersectionObserver} from "@vueuse/core";
+import {ref} from "vue";
+const intersectionTarget = ref(null);
+const isVisable = ref(false);
+
+useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
+    isVisable.value = isIntersecting;
+});
+</script>
+
 <template>
-    <section id="pricing" class="bg-orange-100 w-full items-center justify-center flex flex-col">
+    <section
+        ref="intersectionTarget"
+        id="pricing"
+        :class="`bg-orange-100 w-full items-center justify-center flex flex-col transition-all duration-700 ${
+            isVisable ? 'opacity-100' : 'opacity-10'
+        }`">
         <h2 class="text-2xl font-semibold mb-12">Our pricings:</h2>
         <div class="container flex gap-10 flex-wrap justify-center">
             <article

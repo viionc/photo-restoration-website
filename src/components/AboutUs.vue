@@ -1,5 +1,19 @@
+<script setup lang="ts">
+import {useIntersectionObserver} from "@vueuse/core";
+import {ref} from "vue";
+const intersectionTarget = ref(null);
+const isVisable = ref(false);
+
+useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
+    isVisable.value = isIntersecting;
+});
+</script>
+
 <template>
-    <section id="about" class="container flex justify-center flex-col items-center gap-20">
+    <section
+        ref="intersectionTarget"
+        id="about"
+        :class="`container flex justify-center flex-col items-center gap-20 transition-all duration-700 ${isVisable ? 'opacity-100' : 'opacity-10'}`">
         <article class="flex flex-col justify-center w-[90%] md:w-2/3 items-center">
             <h3 class="text-2xl font-semibold mb-8">About Our Photo Restoration Studio</h3>
             <p class="text-xl w-full md:w-3/4 leading-9">
