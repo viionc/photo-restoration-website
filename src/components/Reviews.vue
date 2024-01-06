@@ -9,7 +9,7 @@ const person3 = new URL("../assets/reviews/person3.webp", import.meta.url).href;
         <h3 class="text-2xl mb-12 font-semibold">Recent Reviews:</h3>
         <div class="flex justify-center items-center flex-wrap gap-12">
             <article class="group w-[300px] hover:scale-105 transition-all duration-500">
-                <img :src="person1" alt="review #1" class="h-20 w-20 rounded-lg float-left me-2 mb-2" />
+                <img :src="person1" alt="review #1" class="h-20 w-20 rounded-lg float-left me-2 mb-2" loading="lazy" />
                 <h4 class="text-xl font-semibold mb-4 group-hover:ms-32 duration-500 transition-all">Grace W.</h4>
                 <p class="text-justify">
                     "Absolutely incredible service! I entrusted Photo Restoration Store with restoring a vintage family photo that was almost beyond
@@ -18,7 +18,7 @@ const person3 = new URL("../assets/reviews/person3.webp", import.meta.url).href;
                 </p>
             </article>
             <article class="group w-[300px] hover:scale-105 transition-all duration-500">
-                <img :src="person2" alt="review #2" class="h-20 w-20 rounded-lg float-left me-2 mb-2" />
+                <img :src="person2" alt="review #2" class="h-20 w-20 rounded-lg float-left me-2 mb-2" loading="lazy" />
                 <h4 class="text-xl font-semibold mb-4 group-hover:ms-32 duration-500 transition-all">Alex M.</h4>
                 <p class="text-justify">
                     "Great experience with Photo Restoration Store! The online process was straightforward, and the team was quick to respond to my
@@ -27,7 +27,7 @@ const person3 = new URL("../assets/reviews/person3.webp", import.meta.url).href;
                 </p>
             </article>
             <article class="group w-[300px] hover:scale-105 transition-all duration-500">
-                <img :src="person3" alt="review #3" class="h-20 w-20 rounded-lg float-left me-2 mb-2" />
+                <img :src="person3" alt="review #3" class="h-20 w-20 rounded-lg float-left me-2 mb-2" loading="lazy" />
                 <h4 class="text-xl font-semibold mb-4 group-hover:ms-32 duration-500 transition-all">Emily J.</h4>
                 <p class="text-justify">
                     "I can't express how thrilled I am with the photo restoration services at Photo Restoration Store. I had an old, torn picture of
