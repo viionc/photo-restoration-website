@@ -51,13 +51,13 @@ setInterval(() => {
                         v-for="i in images.length"
                         loading="lazy"
                         :src="images[i - 1]"
-                        :class="`h-full w-full object-contain ${currentImageIndex === i ? 'block' : 'hidden'}`"
+                        :class="`h-full w-full object-contain  ${currentImageIndex === i ? 'block' : 'hidden'}`"
                         alt="carousel image" />
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3">
                         <span
                             v-for="i in images.length"
                             v-on:click="() => handleDotClick(i)"
-                            :class="`rounded-full shadow-lg
+                            :class="`rounded-full shadow-xl 
                             ${currentImageIndex === i ? 'bg-orange-500 h-8 w-8' : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer  '}`"></span>
                     </div>
                     <div
