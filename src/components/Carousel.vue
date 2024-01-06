@@ -31,13 +31,13 @@ setInterval(() => {
     <section class="w-full flex justify-center bg-orange-100 py-12">
         <div class="container flex flex-col gap-8 justify-center items-center">
             <article class="flex w-full justify-center h-[400px] gap-4">
-                <div class="w-12 h-full flex items-center justify-center">
-                    <img
-                        :src="arrowLeft"
-                        class="p-2 bg-orange-100 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-200"
-                        v-on:click="backwards" />
-                </div>
-                <div class="w-1/2 flex justify-center relative">
+                <div class="w-[98%] md:w-3/4 lg:1/2 flex justify-center relative">
+                    <div class="absolute top-1/2 -translate-y-1/2 left-2 w-12 h-full flex items-center justify-center">
+                        <img
+                            :src="arrowLeft"
+                            class="p-2 bg-orange-200 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-400 bg-opacity-75 shadow-lg"
+                            v-on:click="backwards" />
+                    </div>
                     <img
                         v-for="i in images.length"
                         loading="lazy"
@@ -48,15 +48,15 @@ setInterval(() => {
                         <span
                             v-for="i in images.length"
                             v-on:click="() => handleDotClick(i)"
-                            :class="`rounded-full 
+                            :class="`rounded-full shadow-lg
                             ${currentImageIndex === i ? 'bg-orange-500 h-8 w-8' : 'bg-orange-300 h-6 w-6 hover:scale-125 cursor-pointer  '}`"></span>
                     </div>
-                </div>
-                <div class="w-12 h-full flex items-center justify-center">
-                    <img
-                        :src="arrowRight"
-                        class="p-2 bg-orange-100 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-200"
-                        v-on:click="forwards" />
+                    <div class="absolute top-1/2 -translate-y-1/2 right-2 w-12 h-full flex items-center justify-center">
+                        <img
+                            :src="arrowRight"
+                            class="p-2 bg-orange-200 rounded-md cursor-pointer hover:scale-105 hover:bg-orange-400 bg-opacity-75 shadow-lg"
+                            v-on:click="forwards" />
+                    </div>
                 </div>
             </article>
         </div>
