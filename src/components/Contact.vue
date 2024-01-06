@@ -43,7 +43,9 @@ const closeDialog = () => {
                 Send
             </button>
         </form>
-        <dialog ref="dialog" class="border border-orange-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 rounded-lg shadow-lg">
+        <dialog
+            ref="dialog"
+            class="border border-orange-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-1/2 lg:w-1/3 rounded-lg shadow-lg">
             <div class="w-full h-full flex items-center justify-center flex-col py-8">
                 <h4 class="mb-4 text-2xl font-semibold">Thank you!</h4>
                 <button
