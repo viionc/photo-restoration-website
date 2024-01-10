@@ -13,7 +13,7 @@ useIntersectionObserver(intersectionTarget, ([{isIntersecting}]) => {
     <section
         ref="intersectionTarget"
         id="pricing"
-        :class="`bg-orange-100 w-full items-center justify-center flex flex-col transition-all duration-700 ${
+        :class="`bg-orange-100 w-full py-20 items-center justify-center flex flex-col transition-all duration-700 ${
             isVisable ? 'opacity-100' : 'opacity-10'
         }`">
         <h2 class="text-2xl font-semibold mb-12 text-cyan-800">Our pricings:</h2>

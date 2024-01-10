@@ -8,6 +8,7 @@ import Footer from "./components/Footer.vue";
 import Contact from "./components/Contact.vue";
 import Carousel from "./components/Carousel.vue";
 import Reviews from "./components/Reviews.vue";
+import Accordion from "./components/Accordion.vue";
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import Reviews from "./components/Reviews.vue";
         <AboutUs />
         <Pricing />
         <Reviews />
+        <Accordion />
         <Contact />
         <Footer />
     </main>
