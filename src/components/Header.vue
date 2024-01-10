@@ -25,7 +25,7 @@ const handleNavbar = () => {
                 loading="lazy"
                 v-on:click="handleNavbar" />
             <ul
-                :class="`ms-0 lg:ms-auto text-xl lg:text-4xl w-full lg:w-auto top-0 flex h-[100dvh] md:h-full absolute  z-[1000] flex-col 
+                :class="`ms-0 lg:ms-auto text-xl lg:text-2xl w-full lg:w-auto top-0 flex h-[100dvh] md:h-full absolute  z-[1000] flex-col 
                 justify-center items-center transition-all duration-300 ease-in-out font-semibold
                 md:static md:flex-row ${open ? 'left-0  bg-white' : 'left-[-600px]'}`">
                 <li class="h-full px-6 cursor-pointer hover:bg-orange-500 hover:text-white hover:-translate-y-[10%] transition-all w-full md:w-auto">
